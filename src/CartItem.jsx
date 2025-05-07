@@ -11,6 +11,7 @@ const CartItem = ({ onContinueShopping }) => {
   const calculateTotalAmount = () => {
     return cart.reduce((total, item) => {
         total += parseInt(item.quantity) * parseFloat(item.cost.substring(1));
+        return total;
     }, 0);
   };
 
@@ -30,7 +31,7 @@ const CartItem = ({ onContinueShopping }) => {
   };
 
   const handleDecrement = (item) => {
-    quantity = item.quantity 
+    let quantity = item.quantity 
     if (quantity > 1 ) {
         quantity--
     }
